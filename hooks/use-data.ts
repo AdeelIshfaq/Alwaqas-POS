@@ -24,7 +24,7 @@ export function useProducts() {
     return () => { supabase.removeChannel(channel); };
   }, [fetch, supabase]);
 
-  const add = async (product: Omit<Product, 'id' | 'created_at'>) => {
+  const add = async (product: Omit<Product, 'created_at'>) => {
     await supabase.from('products').insert(product);
   };
 
@@ -90,7 +90,7 @@ export function useCustomers() {
     return () => { supabase.removeChannel(channel); };
   }, [fetch, supabase]);
 
-  const add = async (customer: Omit<Customer, 'id' | 'created_at'>) => {
+  const add = async (customer: Omit<Customer, 'created_at'>) => {
     await supabase.from('customers').insert(customer);
   };
 
@@ -125,7 +125,7 @@ export function useVendors() {
     return () => { supabase.removeChannel(channel); };
   }, [fetch, supabase]);
 
-  const add = async (vendor: Omit<Vendor, 'id' | 'created_at'>) => {
+  const add = async (vendor: Omit<Vendor, 'created_at'>) => {
     await supabase.from('vendors').insert(vendor);
   };
 
